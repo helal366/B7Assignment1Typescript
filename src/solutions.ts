@@ -2,31 +2,23 @@ function filterEvenNumbers(arr:number[]):number[]{
     const evenArr = arr.filter((num:number)=>num%2===0);
     return evenArr
 };
-const arr = [1,2,3,4,5,6,7,8,9];
-filterEvenNumbers(arr)
 
 
 function reverseString(str:string){
     const revStr =  str.split("").reverse().join("");
     return revStr;
-}
-const str = "typescript"
-reverseString(str);
+};
 
 
 type StringOrNumber = string | number;
 function checkType(input:StringOrNumber):string{
     return typeof input === "number"? "Number":"String"
 }
-checkType(125);
-checkType("hello");
 
 
-const user = { id: 1, name: "John Doe", age: 21 };
 function getProperty<T, K extends keyof T>(user:T, key:K):T[K]{
     return user[key]
 }
-getProperty(user, "name")
 
 
 interface Book{
@@ -34,14 +26,12 @@ interface Book{
     author:string,
     publishedYear:number
 }
-const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
 function toggleReadStatus(book:Book):Book & {isRead:boolean}{
     return {
         ...book,
         isRead:true
     }
 }
-toggleReadStatus(myBook);
 
 
 class Person{
@@ -57,12 +47,8 @@ class Student extends Person{
         return result
     }
 }
-const student = new Student("Alice", 20, "A");
-student.getDetails();
 
 
-const arr1:number[]=[1, 2, 3, 4, 5];
-const arr2:number[]=[3, 4, 5, 6, 7]
 function getIntersection(arr1:number[], arr2:number[]):number[]{
     let freq = new Map<number, number>();
     const result:number[] = [];
@@ -78,4 +64,3 @@ function getIntersection(arr1:number[], arr2:number[]):number[]{
     }
     return result
 }
-getIntersection(arr1,arr2)
