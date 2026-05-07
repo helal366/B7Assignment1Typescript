@@ -15,12 +15,8 @@ reverseString(str);
 
 
 type StringOrNumber = string | number;
-function checkType(input:StringOrNumber){
-    if(typeof input === "number"){
-        return "Number"
-    }else if(typeof input==="string"){
-        return "String"
-    }
+function checkType(input:StringOrNumber):string{
+    return typeof input === "number"? "Number":"String"
 }
 checkType(125);
 checkType("hello");
