@@ -11,7 +11,8 @@ function reverseString(str:string){
 
 
 type StringOrNumber = string | number;
-function checkType(input:StringOrNumber):string{
+type MyString = "Number" | "String";
+function checkType(input:StringOrNumber):MyString{
     return typeof input === "number"? "Number":"String"
 }
 
@@ -40,11 +41,9 @@ class Person{
 class Student extends Person{
     constructor(name:string, age:number, public grade:string){
         super(name,age);
-        this.grade = grade;
     }
     getDetails(){
-        const result = `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`
-        return result
+        return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`
     }
 }
 
